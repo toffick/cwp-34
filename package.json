@@ -2,7 +2,7 @@
   "name": "sample",
   "version": "0.1.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "set NODE_ENV=development&& node index.js"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
