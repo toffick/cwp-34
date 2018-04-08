@@ -1,0 +1,8 @@
+2018-02-13T05:25:58.919Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
+ query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
+2018-02-14T04:04:16.473Z - [32minfo[39m: /api/office/agents POST
+ body: {"id":3}
+2018-02-14T04:04:36.138Z - [32minfo[39m: /api/office/agents POST
+ body: {"id":3}
+2018-02-14T04:04:41.188Z - [32minfo[39m: /api/office/create POST
+ body: {"title":"Scout, The","website":"http://ebay.com/ultricies/eu/nibh/quisque/id/justo/sit.jsp?metus=proin&vitae=leo&ipsum=odio&aliquam=porttitor&non=id&mauris=consequat&morbi=in&non=consequat&lectus=ut&aliquam=nulla&sit=sed&amet=accumsan&diam=felis&in=ut&magna=at&bibendum=dolor&imperdiet=quis&nullam=odio&orci=consequat&pede=varius&venenatis=integer&non=ac&sodales=leo&sed=pellentesque&tincidunt=ultrices&eu=mattis&felis=odio&fusce=donec&posuere=vitae&felis=nisi&sed=nam&lacus=ultrices&morbi=libero&sem=non&mauris=mattis&laoreet=pulvinar&ut=nulla&rhoncus=pede&aliquet=ullamcorper&pulvinar=augue&sed=a&nisl=suscipit&nunc=nulla&rhoncus=elit&dui=ac&vel=nulla&sem=sed&sed=vel&sagittis=enim&nam=sit&congue=amet&risus=nunc&semper=viverra&porta=dapibus&volutpat=nulla&quam=suscipit&pede=ligula&lobortis=in&ligula=lacus&sit=curabitur&amet=at&eleifend=ipsum&pede=ac&libero=tellus&quis=semper&orci=interdum&nullam=mauris&molestie=ullamcorper&nibh=purus&in=sit&lectus=amet&pellentesque=nulla&at=quisque&nulla=arcu&suspendisse=libero","address":"8547 Basil Plaza"}

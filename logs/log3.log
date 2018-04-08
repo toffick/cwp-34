@@ -1,0 +1,11 @@
+2018-02-13T05:24:02.267Z - [32minfo[39m: /api/office/delete POST
+ body: {"id":1}
+2018-02-13T05:24:04.390Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
+ query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
+2018-02-13T05:24:20.542Z - [32minfo[39m: /api/office/agents?limit=2 POST
+ query: {"limit":"2"}
+ body: {"id":1}
+2018-02-13T05:24:26.250Z - [32minfo[39m: /api/office/agents/1 POST
+ body: {"id":1}
+2018-02-13T05:24:38.452Z - [32minfo[39m: /api/office/agents POST
+ body: {"id":1}

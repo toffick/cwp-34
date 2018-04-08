@@ -1,0 +1,5 @@
+2018-03-12T20:03:19.983Z - [32minfo[39m: /api/property/create POST
+ body: {"price":2,"currency":"USD","heading":"Research and Development","location":"sds","agentId":2}
+2018-03-12T20:05:39.392Z - [32minfo[39m: /api/property/1 GET
+2018-03-12T20:05:51.416Z - [32minfo[39m: /api/property?limit=6&offset=0&sortField=currency&sortOrder=desc GET
+ query: {"limit":"6","offset":"0","sortField":"currency","sortOrder":"desc"}
