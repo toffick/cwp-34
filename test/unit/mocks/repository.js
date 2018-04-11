@@ -19,5 +19,7 @@ module.exports = (data) => {
 		mock.destroy.mockClear();
 	};
 
+	mock.data = data;
+
 	return mock;
 };
