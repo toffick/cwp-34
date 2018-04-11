@@ -12,11 +12,11 @@ class PropertyService extends CrudService {
 
     async create(data) {
 
-        let validCheck = validator(this.schema, data);
+			let validCheck = validator(this.schema, data);
         if (!validCheck.isValid)
             throw this.errors.validError(validCheck.errors);
 
-        super.create(data);
+        return super.create(data);
     }
 
     async update(data) {
