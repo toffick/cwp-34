@@ -2,7 +2,8 @@
   "name": "sample",
   "version": "0.1.0",
   "scripts": {
-    "start": "set NODE_ENV=development&& node index.js"
+    "start": "set NODE_ENV=development&& node index.js",
+    "test-unit": "jest test/unit"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
