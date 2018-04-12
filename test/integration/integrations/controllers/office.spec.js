@@ -17,8 +17,8 @@ describe('controllers/offices', () => {
 		expect.assertions(1);
 
 		const offices = await helper.getOffices();
-		console.log(offices);
+
 		expect(offices).toEqual(officesData);
 	});
 });
-s
+

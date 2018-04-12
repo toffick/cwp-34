@@ -10,6 +10,8 @@ describe('service/property', () => {
 	let repository;
 	let instance;
 
+
+	// FIXME service/property create and update
 	beforeEach(() => {
 		repository = repositoryMock(agents());
 		agentsRepository = repositoryMock(properties());

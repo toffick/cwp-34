@@ -4,9 +4,9 @@ module.exports = (data) => {
 
 		findById: jest.fn((id) => Promise.resolve(data[id])),
 
-		create: jest.fn((data) => ({get: () => Promise.resolve(data)})),
+		create: jest.fn((item) => ({get: () => Promise.resolve(item)})),
 
-		update: jest.fn((data) => Promise.resolve([1, [data]])),
+		update: jest.fn((item) => Promise.resolve([1, [item]])),
 
 		destroy: jest.fn(() => Promise.resolve(1))
 	};
