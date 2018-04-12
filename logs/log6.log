@@ -1,8 +1,0 @@
-2018-02-13T05:25:58.317Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
-2018-02-13T05:25:58.318Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET FROM CACHE
-
-2018-02-13T05:25:58.609Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
-2018-02-13T05:25:58.611Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET FROM CACHE
-

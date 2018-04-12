@@ -1,6 +1,0 @@
-2018-03-12T20:02:02.803Z - [32minfo[39m: /api/property?limit=6&offset=0&sortField=currency&sortOrder=desc GET
- query: {"limit":"6","offset":"0","sortField":"currency","sortOrder":"desc"}
-2018-03-12T20:02:36.291Z - [32minfo[39m: /api/agent/create POST
- body: {"name":"Gris Lambdforn","email":"glambordfn1@yolasite.com","tel":"608-72222256-4811","officeId":1}
-2018-03-12T20:03:11.585Z - [32minfo[39m: /api/agent/create POST
- body: {"name":"Gris Lambdforn","email":"glambordfn1@yolasite.com","tel":"608-72222256-4811","officeId":1}

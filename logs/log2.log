@@ -1,6 +1,0 @@
-2018-02-13T05:23:40.349Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
-2018-02-13T05:23:53.367Z - [32minfo[39m: /api/office/update POST
- body: {"id":1,"title":"Scout, The","website":"tut.by'","address":"8547 Basil Plaza"}
-2018-02-13T05:23:55.765Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}

@@ -2,7 +2,7 @@ const errors = require('../../../../helpers/errors');
 const schemaProperty = require('../../../../schemas/property');
 const PropertyService = require('../../../../services/property');
 const {agents, properties} = require('../../data');
-const repositoryMock = require('../../mocks/repository');
+const repositoryMock = require('../../../mocks/repository');
 
 describe('service/property', () => {
 
@@ -397,5 +397,3 @@ describe('service/property', () => {
 
 	});
 });
-
-

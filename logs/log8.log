@@ -1,8 +1,0 @@
-2018-02-14T04:04:45.882Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
-2018-02-14T04:06:24.726Z - [32minfo[39m: /api/office?limit=10&offset=0&sortOrder=asc&sortField=title GET
- query: {"limit":"10","offset":"0","sortOrder":"asc","sortField":"title"}
-2018-02-14T04:06:28.469Z - [32minfo[39m: /api/office/agents POST
- body: {"id":3}
-2018-02-14T04:07:13.003Z - [32minfo[39m: /api/office/agents POST
- body: {"id":3}
