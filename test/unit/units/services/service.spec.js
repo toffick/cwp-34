@@ -299,7 +299,7 @@ describe('service/property', () => {
 		it('should return a promise', async () => {
 			const ret = instance.delete(id);
 
-			expect(ret).toBeInstanceOf(Promise);
+			expect(ret).toBeInstanceOf(Number);
 		})
 
 		it('should return a number of deleted items', async () => {
