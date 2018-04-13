@@ -1,23 +1,24 @@
 module.exports = (data) => {
+	const internalData = data;
 	const mock = {
-		findAll: jest.fn((params) => Promise.resolve(data)),
+		findAll: jest.fn((params) => Promise.resolve(internalData)),
 
-		findById: jest.fn((id) => Promise.resolve(data[id])),
+		findById: jest.fn((id) => Promise.resolve(internalData[id])),
 
 		create: jest.fn((item) => {
-			data.push(item);
+			internalData.push(item);
 			return {
 				get: () => Promise.resolve(item)
 			}
 		}),
 
 		update: jest.fn((item, obj) => {
-			data[+obj.where.id] = item;
+			internalData[+obj.where.id] = item;
 			return Promise.resolve([1, [item]]);
 		}),
 
 		destroy: jest.fn((obj) => {
-			delete data[obj.where.id];
+			delete internalData[obj.where.id];
 			return Promise.resolve(1);
 		})
 	};
@@ -29,8 +30,6 @@ module.exports = (data) => {
 		mock.update.mockClear();
 		mock.destroy.mockClear();
 	};
-
-	mock.data = data;
 
 	return mock;
 };

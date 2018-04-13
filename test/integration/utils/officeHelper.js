@@ -38,5 +38,12 @@ module.exports = (db, config) => {
 				.send(office)
 				.expect(200)
 				.then((res) => res.body)
+		,
+		readAgents: (officeId) =>
+			testInstance
+				.post(`/offices/agents`)
+				.send(officeId)
+				.expect(200)
+				.then((res) => res.body)
 	}
 };

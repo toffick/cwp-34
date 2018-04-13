@@ -48,7 +48,6 @@ class AgentService extends CrudService {
             limit: Number(options.limit) || this.defaults.readChunk.limit,
             offset: Number(options.offset) || this.defaults.readChunk.offset
         };
-        console.log(options);
         const agent = await this.repository.findById(agentId);
 
         if (!agent) {

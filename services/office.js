@@ -19,8 +19,8 @@ class OfficeService extends CrudService {
     }
 
     async update(data) {
-		console.log(data);
-		let validCheck = validator(this.schema, data);
+
+        let validCheck = validator(this.schema, data);
         if (!validCheck.isValid)
             throw this.errors.validError(validCheck.errors);
 

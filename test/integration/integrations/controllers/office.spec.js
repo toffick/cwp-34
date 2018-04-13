@@ -9,6 +9,7 @@ describe('controllers/offices', () => {
 	let officesRepo;
 
 	beforeEach(() => {
+		officesData.push({df:2, getAgents: ()=>(Promise.resolve('it is agent'))});
 		officesRepo = repo(officesData);
 		helper = officeHelper({offices: officesRepo}, config);
 	});
@@ -18,7 +19,7 @@ describe('controllers/offices', () => {
 
 		const offices = await helper.getOffices();
 
-		expect(offices).toEqual(officesData);
+		expect(offices).toEqual(JSON.parse(JSON.stringify(officesData)));
 	});
 
 	it('get once', async () => {
@@ -68,20 +69,28 @@ describe('controllers/offices', () => {
 		);
 	});
 
-	// it('remove office', async () => {
-	// 	expect.assertions(1);
-	//
-	// 	let offices = await helper.getOffices();
-	//
-	// 	const item = offices.find((hero) => hero.title === 'Scout, The');
-	//
-	// 	await helper.deleteOffice(item);
-	//
-	// 	offices = await helper.getOffices();
-	//
-	// 	expect(offices).not.toContainEqual(
-	// 		expect.objectContaining(item)
-	// 	);
-	// });
+	it('remove office', async () => {
+		expect.assertions(1);
+
+		let offices = await helper.getOffices();
+
+		const item = offices.find((hero) => hero.title === 'Scout, The');
+
+		await helper.deleteOffice(item);
+
+		offices = await helper.getOffices();
+
+		expect(offices).not.toContainEqual(
+			expect.objectContaining(item)
+		);
+	});
+
+	it('read agents', async () => {
+		expect.assertions(1);
+
+		const fouondedItem = await helper.readAgents({id: 3});
+
+		expect(fouondedItem).toEqual('it is agent');
+	});
 });
 
