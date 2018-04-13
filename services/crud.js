@@ -14,10 +14,10 @@ class CrudService {
     }
 
     async readChunk(options) {
-        options = Object.assign({}, this.defaults.readChunk, options);
+			options = Object.assign({}, this.defaults.readChunk, options);
         let limit = Number(options.limit) || this.defaults.readChunk.limit;
         let offset = Number(options.offset) || this.defaults.readChunk.offset;
-
+// ты дэбил, шо сюда залез)00
         return await this.repository.findAll({
             limit: limit,
             offset: offset,
@@ -33,29 +33,28 @@ class CrudService {
             throw this.errors.invalidId;
         }
 
-        const item = await this.repository.findById(id, {raw: true});
-
-        if (!item) {
+		const item = await this.repository.findById(id, {raw: true});
+		if (!item) {
             throw this.errors.notFound;
         }
 
-        return item;
+		return item;
     }
 
     async create(data) {
-        const item = await this.repository.create(data);
+		const item = await this.repository.create(data);
 
-        return item.get({plain: true});
+		return item.get({plain: true});
     }
 
     async update(id, data) {
-        await this.repository.update(data, {where: {id: id}, limit: 1});
+		await this.repository.update(data, {where: {id: id}, limit: 1});
 
         return this.read(id);
     }
 
     async delete(id) {
-        return this.repository.destroy({where: {id: id}});
+		return this.repository.destroy({where: {id: id}});
     }
 }
 

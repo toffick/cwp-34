@@ -1,7 +1,8 @@
 const errors = require('../../../../helpers/errors');
 const schemaProperty = require('../../../../schemas/property');
 const PropertyService = require('../../../../services/property');
-const {agents, properties} = require('../../data');
+const properties = require('../../../data/properties');
+const agents = require('../../../data/agents');
 const repositoryMock = require('../../../mocks/repository');
 
 describe('service/property', () => {
@@ -11,10 +12,9 @@ describe('service/property', () => {
 	let instance;
 
 
-	// FIXME service/property create and update
 	beforeEach(() => {
-		repository = repositoryMock(agents());
-		agentsRepository = repositoryMock(properties());
+		repository = repositoryMock(agents);
+		agentsRepository = repositoryMock(properties);
 
 		instance = new PropertyService(repository, agentsRepository, schemaProperty, errors);
 	});
@@ -75,7 +75,7 @@ describe('service/property', () => {
 		it('should return all data', async () => {
 			const ret = await  instance.readChunk(options);
 
-			expect(ret).toEqual(agents());
+			expect(ret).toEqual(agents);
 		})
 
 		it('should use default options', async () => {
@@ -95,7 +95,7 @@ describe('service/property', () => {
 		let id;
 
 		beforeEach(() => {
-			id = 42;
+			id = 1;
 		});
 
 		it('should throw error if id is NaN', async () => {
@@ -112,17 +112,17 @@ describe('service/property', () => {
 			await instance.read(id);
 
 			expect(repository.findById).toHaveBeenCalled();
-			expect(repository.findById.mock.calls[0][0]).toEqual(42);
+			expect(repository.findById.mock.calls[0][0]).toEqual(1);
 			expect(repository.findById.mock.calls[0][1]).toEqual({raw: true});
 		})
 
 		it('should parse id in string view', async () => {
-			id = '42';
+			id = '1';
 
 			await instance.read(id);
 
 			expect(repository.findById).toHaveBeenCalled();
-			expect(repository.findById.mock.calls[0][0]).toEqual(42);
+			expect(repository.findById.mock.calls[0][0]).toEqual(1);
 		})
 
 		it('should throw error founded item is undefined', async () => {
@@ -146,7 +146,12 @@ describe('service/property', () => {
 		it('should return created item', async () => {
 			const ret = await instance.read(id);
 
-			expect(ret).toEqual('Agent_42');
+			expect(ret).toEqual({
+				email: 'glamborn1@yolasite.com',
+				name: 'Gris Lamborn',
+				officeId: 1,
+				tel: '608-756-4811'
+			});
 		});
 	});
 
@@ -216,7 +221,7 @@ describe('service/property', () => {
 
 		beforeEach(() => {
 			data = {
-				id: 42,
+				id: 2,
 				price: 10,
 				currency: 'BYN',
 				heading: 'koko',
@@ -268,10 +273,10 @@ describe('service/property', () => {
 
 			expect(repository.update).toHaveBeenCalled();
 			expect(repository.update.mock.calls[0][0]).toEqual(data);
-			expect(repository.update.mock.calls[0][1]).toEqual({where: {id: 42}, limit: 1});
+			expect(repository.update.mock.calls[0][1]).toEqual({where: {id: 2}, limit: 1});
 
 			expect(repository.findById).toHaveBeenCalled();
-			expect(repository.findById.mock.calls[0][0]).toEqual(42);
+			expect(repository.findById.mock.calls[0][0]).toEqual(2);
 		});
 
 	});
@@ -281,14 +286,14 @@ describe('service/property', () => {
 		let id;
 
 		beforeEach(() => {
-			id = 42;
+			id = 2;
 		});
 
 		it('should call db.destroy', async () => {
 			await instance.delete(id);
 
 			expect(repository.destroy).toHaveBeenCalled();
-			expect(repository.destroy.mock.calls[0][0]).toEqual({where: {id: 42}});
+			expect(repository.destroy.mock.calls[0][0]).toEqual({where: {id: 2}});
 		})
 
 		it('should return a promise', async () => {
@@ -342,7 +347,7 @@ describe('service/property', () => {
 		it('should return updated item', async () => {
 			const ret = await instance.addAgent(propId, agentId);
 
-			expect(ret).toEqual('Agent_1');
+			expect(ret).toEqual({agentId: 1});
 		});
 
 		it('should call db.update and db.read', async () => {
@@ -383,7 +388,8 @@ describe('service/property', () => {
 		it('should return updated item', async () => {
 			const ret = await instance.removeAgent(propId);
 
-			expect(ret).toEqual('Agent_1');
+			// the worst unit test ever
+			expect(ret).toEqual({agentId: null});
 		});
 
 		it('should call db.update and db.read', async () => {

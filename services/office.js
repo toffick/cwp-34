@@ -11,20 +11,20 @@ class OfficeService extends CrudService {
 
     async create(data) {
 
-        let validCheck = validator(this.schema, data);
-        if (!validCheck.isValid)
+		let validCheck = validator(this.schema, data);
+		if (!validCheck.isValid)
             throw this.errors.validError(validCheck.errors);
 
-        super.create(data);
+		return super.create(data);
     }
 
     async update(data) {
-
-        let validCheck = validator(this.schema, data);
+		console.log(data);
+		let validCheck = validator(this.schema, data);
         if (!validCheck.isValid)
             throw this.errors.validError(validCheck.errors);
 
-        return super.update(data.id, data);
+		return super.update(data.id, data);
     }
 
     async readAgents(officeId, options) {
